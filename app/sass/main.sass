@@ -1,0 +1,80 @@
+@import vars
+@import fonts
+@import libs
+
+body
+	font-size: 16px
+	min-width: 320px
+	position: relative
+	font-family: 'Roboto', sans-serif
+	box-sizing: border-box
+
+.valid
+	border: 1px solid green !important
+.invalid
+	border: 1px solid red !important
+
+
+.form 
+	display: flex
+	flex-direction: column
+	background-color: #F7F5F9
+	border-radius: 12px
+	box-shadow: 5px 5px 12px rgba(0,0,0,0.24)
+
+	&-wrapper 
+		padding: 40px
+
+	&__title
+		color: #3B3D43
+		font-size: 24px
+		margin: 0
+		line-height: 0.85
+
+.form_ask-question
+	width: 481px
+	margin: 0 auto
+	margin-top: 31px
+	font-weight: 400
+
+	input
+		box-sizing: border-box
+		height: 48px
+		margin-top: 25px
+		width: 100%
+		padding-left: 15px
+		box-shadow: 0px 7px 64px rgba(0, 0, 0, 0.07)
+		border-radius: 6px
+		border: 1px solid #fff
+		
+		&::placeholder 
+			font-size: 15px
+			line-height: 20px
+			color: #D0C9D6
+
+		&[type='submit']
+			border: 1px solid #6979F8
+			box-shadow: none
+			background-color: #6979F8
+			color: #fff
+			text-transform: uppercase
+			font-size: 17px
+			line-height: 22px
+			padding: 0
+		
+		&:hover, &:active, &:focus
+			outline: none
+			border: 1px solid #854FC8
+
+// .form__full-name
+// 	text-transform: capitalize
+	
+//Убираем ужасный бледно-синий бекграунд у инпутов при автозаполнении
+@-webkit-keyframes autofill
+	to
+    	color: inherit
+    	background: #fff
+
+input:-webkit-autofill
+	-webkit-animation-name: autofill
+	-webkit-animation-fill-mode: both
