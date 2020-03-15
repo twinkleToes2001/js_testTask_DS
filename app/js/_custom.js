@@ -6,7 +6,8 @@ document.addEventListener('DOMContentLoaded', function() {
 
 	const 	fullName_input = 	document.querySelector('.form__full-name'),
 			phoneNumber_input = document.querySelector('.form__phone-number'),
-			email_input =		document.querySelector('.form__email');
+			email_input =		document.querySelector('.form__email'),
+			submit_button =		document.querySelector('.form__submit');
 	// Навешиваем событие(находится в самом конце) на поле с номером телефона
 	phoneNumber_input.addEventListener('input', mask);
 	phoneNumber_input.addEventListener('focus', mask);
@@ -84,7 +85,17 @@ document.addEventListener('DOMContentLoaded', function() {
 			event.preventDefault();
 		}
 	});
-
+	submit_button.addEventListener('click', event => {
+		for (let input of inputs) {
+			if (input.value == '') {
+				input.classList.add('invalid');
+				event.preventDefault();
+			}
+			if (input.classList.contains('invalid')) {
+				event.preventDefault();
+			}
+		}
+	});
 
 	// Маска для телефона пользователя
 	function mask(event) {
