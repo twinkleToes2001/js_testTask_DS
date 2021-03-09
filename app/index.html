@@ -2,36 +2,31 @@
 <html lang="en">
 
 <head>
-
 	<meta charset="utf-8">
-
 	<title>DS-Form</title>
-
 	<meta name="viewport" content="width=device-width">
-	
 	<link rel="stylesheet" href="css/styles.min.css">
-	<link href="https://fonts.googleapis.com/css?family=Roboto:100,300,400,700&display=swap&subset=cyrillic" rel="stylesheet">
-	
 </head>
 
 <body>
 
-	<form class="form form_ask-question" action="https://digital-spectr.com/ac/academy.php" method="POST">
+	<div class="form-response">
+		<h2 class="form-response__status"></h2>
+		<p class="form-response__desc"></p>
+	</div>
 
-		<div class="form-wrapper">
-
+	<div class="form-wrapper container">
+		<form id="form-feedback" class="form form-feedback" action="https://60376bfd5435040017722533.mockapi.io/form" method="POST">
 			<h2 class="form__title">Задать вопрос</h2>
 
-			<input class="form__full-name" type="text" name="fullName" placeholder="Фамилия Имя Отчество *">
-			<input class="form__phone-number" type="tel" name="phoneNumber" placeholder="Телефон *">
+			<input class="form__full-name" type="text" name="name" placeholder="Фамилия Имя Отчество *">
+			<input class="form__phone-number" type="tel" name="phone" placeholder="Телефон *">
 			<input class="form__email" type="email" name="email" placeholder="Email">
-			<input class="form__submit" type="submit" name="submitBtn" value="Отправить запрос">
+			<input class="form__submit" type="submit" value="Отправить запрос">
 
-		</div>
+		</form>
+	</div>
 
-	</form>
-
-	<script src="js/scripts.min.js"></script>
-
+	<script defer src="js/scripts.min.js"></script>
 </body>
 </html>

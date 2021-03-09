@@ -1,80 +1,101 @@
-@import vars
 @import fonts
-@import libs
+
+h2, p
+	margin: 0
+
+html
+	box-sizing: border-box
+	scroll-behavior: smooth
+*, *:after, *:before
+	box-sizing: inherit
 
 body
+	font-family: 'Roboto', sans-serif
 	font-size: 16px
 	min-width: 320px
 	position: relative
-	font-family: 'Roboto', sans-serif
-	box-sizing: border-box
+
+.container
+	margin: 0 auto
+
+input
+	&:hover, &:active, &:focus
+		outline: none
 
 .valid
-	border: 1px solid green !important
+	border: 1px solid forestgreen !important
 .invalid
-	border: 1px solid red !important
+	border: 1px solid lightcoral !important
 
+.form-response
+	background-color: white
+	z-index: 1
+	text-align: center
+	padding: 10px
+	width: 200px
+	border: 1px solid red
+	border-radius: 10px
+	position: absolute
+	left: 50%
+	transform: translate(-50%, calc(-100% + -31px))
+	transition: transform .5s
+	.form-response__status
+		margin-bottom: 10px
+		font-size: 18px
+	.form-response__desc
+		font-size: 14px
 
-.form 
-	display: flex
-	flex-direction: column
-	background-color: #F7F5F9
-	border-radius: 12px
-	box-shadow: 5px 5px 12px rgba(0,0,0,0.24)
-
-	&-wrapper 
-		padding: 40px
-
-	&__title
-		color: #3B3D43
-		font-size: 24px
-		margin: 0
-		line-height: 0.85
-
-.form_ask-question
-	width: 481px
-	margin: 0 auto
+.form-wrapper
 	margin-top: 31px
-	font-weight: 400
+	display: grid
+	justify-content: center
 
-	input
-		box-sizing: border-box
-		height: 48px
-		margin-top: 25px
-		width: 100%
-		padding-left: 15px
-		box-shadow: 0px 7px 64px rgba(0, 0, 0, 0.07)
-		border-radius: 6px
-		border: 1px solid #fff
-		
-		&::placeholder 
-			font-size: 15px
-			line-height: 20px
-			color: #D0C9D6
+	.form
+		display: flex
+		flex-direction: column
+		background-color: #F7F5F9
+		border-radius: 12px
+		box-shadow: 5px 5px 12px rgba(0,0,0,0.24)
 
-		&[type='submit']
-			border: 1px solid #6979F8
+	.form-feedback
+		padding: 40px
+		width: 481px
+
+		.form__title
+			color: #3B3D43
+			font-size: 24px
+			margin: 0
+			line-height: 0.85
+			letter-spacing: 0
+
+		.form__full-name,
+		.form__phone-number,
+		.form__email,
+		.form__submit
+			height: 48px
+			margin-top: 25px
+			width: 100%
+			padding-left: 14px
+			box-shadow: 0 7px 64px rgba(0, 0, 0, 0.07)
+			border-radius: 6px
+			border: 1px solid transparent
+			transition: border-color .25s
+
+			&:hover, &:active, &:focus
+				border: 1px solid #854FC8
+
+			&::placeholder
+				font-size: 15px
+				line-height: 20px
+				color: #D0C9D6
+
+		.form__submit
 			box-shadow: none
 			background-color: #6979F8
 			color: #fff
 			text-transform: uppercase
 			font-size: 17px
-			line-height: 22px
+			line-height: 17px
+			font-weight: 100
 			padding: 0
-		
-		&:hover, &:active, &:focus
-			outline: none
-			border: 1px solid #854FC8
 
-// .form__full-name
-// 	text-transform: capitalize
-	
-//Убираем ужасный бледно-синий бекграунд у инпутов при автозаполнении
-@-webkit-keyframes autofill
-	to
-    	color: inherit
-    	background: #fff
-
-input:-webkit-autofill
-	-webkit-animation-name: autofill
-	-webkit-animation-fill-mode: both
