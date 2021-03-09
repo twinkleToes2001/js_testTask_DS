@@ -19,11 +19,22 @@
 		<form id="form-feedback" class="form form-feedback" action="https://60376bfd5435040017722533.mockapi.io/form" method="POST">
 			<h2 class="form__title">Задать вопрос</h2>
 
-			<input class="form__full-name" type="text" name="name" placeholder="Фамилия Имя Отчество *">
-			<input class="form__phone-number" type="tel" name="phone" placeholder="Телефон *">
-			<input class="form__email" type="email" name="email" placeholder="Email">
-			<input class="form__submit" type="submit" value="Отправить запрос">
+			<div class="form__element">
+				<label class="label" for="form__full-name"></label>
+				<input id="form__full-name" class="form__full-name" type="text" name="name" placeholder="Фамилия Имя Отчество *">
+			</div>
+			<div class="form__element">
+				<label class="label" for="form__phone-number"></label>
+				<input id="form__phone-number" class="form__phone-number" type="tel" name="phone" placeholder="Телефон *">
+			</div>
+			<div class="form__element">
+				<label class="label" for="form__email"></label>
+				<input id="form__email" class="form__email" type="email" name="email" placeholder="Email">
+			</div>
 
+			<div class="form__element">
+				<input class="form__submit" type="submit" value="Отправить запрос">
+			</div>
 		</form>
 	</div>
 

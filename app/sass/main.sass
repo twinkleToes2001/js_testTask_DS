@@ -68,34 +68,42 @@ input
 			line-height: 0.85
 			letter-spacing: 0
 
-		.form__full-name,
-		.form__phone-number,
-		.form__email,
-		.form__submit
+		.form__element
 			height: 48px
 			margin-top: 25px
-			width: 100%
-			padding-left: 14px
-			box-shadow: 0 7px 64px rgba(0, 0, 0, 0.07)
-			border-radius: 6px
-			border: 1px solid transparent
-			transition: border-color .25s
+			.label
+				position: absolute
+				transform: translateY(calc(-100% + -3px))
+				font-size: 14px
 
-			&:hover, &:active, &:focus
-				border: 1px solid #854FC8
+			.form__full-name,
+			.form__phone-number,
+			.form__email,
+			.form__submit
+				height: 100%
+				width: 100%
+				padding-left: 14px
+				box-shadow: 0 7px 64px rgba(0, 0, 0, 0.07)
+				border-radius: 6px
+				border: 1px solid transparent
+				transition: border-color .25s
 
-			&::placeholder
-				font-size: 15px
-				line-height: 20px
-				color: #D0C9D6
+				&:hover, &:active, &:focus
+					border: 1px solid #854FC8
 
-		.form__submit
-			box-shadow: none
-			background-color: #6979F8
-			color: #fff
-			text-transform: uppercase
-			font-size: 17px
-			line-height: 17px
-			font-weight: 100
-			padding: 0
+				&::placeholder
+					font-size: 15px
+					line-height: 20px
+					color: #D0C9D6
+
+			.form__submit
+				font-family: 'Roboto', sans-serif
+				box-shadow: none
+				background-color: #6979F8
+				color: #fff
+				text-transform: uppercase
+				font-size: 17px
+				font-weight: 300
+				line-height: 17px
+				padding: 0
 
