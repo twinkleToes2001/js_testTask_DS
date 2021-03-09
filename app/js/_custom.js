@@ -51,9 +51,11 @@ document.addEventListener('DOMContentLoaded', function() {
 
 				if (validation) {
 					this.classList.add('valid');
+					this.previousElementSibling.style.opacity = '0'
 				}
 				else {
 					this.classList.add('invalid');
+					this.previousElementSibling.style.opacity = '1'
 				}	
 			}
 		});
